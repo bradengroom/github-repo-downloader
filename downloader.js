@@ -28,6 +28,13 @@ function  getRepos(since) {
 
         //print reset time
         console.log(d.toUTCString());
+
+        //if we have seen new repos
+        if (config.since !== since) {
+
+          //save our state
+          saveState(config, since)
+        }
       });
     } else {
 
@@ -73,8 +80,7 @@ function saveState(config, since) {
     if (err) {
       console.log(err);
     } else {
-      console.log("JSON saved to ");
-      config.password = req.body.new;
+      console.log("State saved in config.json");
     }
   });
 }
