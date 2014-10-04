@@ -24,7 +24,7 @@ function  getRepos(since) {
 
         //convert time since epoch to date
         var d = new Date(0);
-        d.setUTCSeconds(body.rate.reset);
+        d.setUTCSeconds(body.resources.core.reset);
 
         //print reset time
         console.log(d.toUTCString());
