@@ -33,7 +33,7 @@ function  getRepos(since) {
         if (config.since !== since) {
 
           //save our state
-          saveState(config, since)
+          saveState(since)
         }
       });
     } else {
@@ -72,7 +72,7 @@ function  getRepos(since) {
   });
 }
 
-function saveState(config, since) {
+function saveState(since) {
 
   config.since = since;
 
