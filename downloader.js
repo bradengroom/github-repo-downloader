@@ -1,7 +1,7 @@
 var github = require('octonode');
 var fs = require('fs');
 
-//read in config.json
+//read in config.json /*379396*/
 var config = require('./config.json');
 
 //create github client
@@ -52,16 +52,15 @@ function  getRepos(since) {
             //if there was no error and the repo is written in C++ or C
             if(!err && (body.language == 'C++' || body.language == 'C' )){
 
-              /*client.get('/repos/' +body.owner.login + '/' + body.name + '/contributors', {}, function (err, status, body, headers) {
+              (function(repo) {
+                client.get('/repos/' +body.owner.login + '/' + body.name + '/contributors', {}, function (err, status, body, headers) {
 
-                //if there was no error, there is only one contributor, and there were at least 10 contributions
-                if (!err && body.length == 1 && body[0].contributions >= 10) {
-                  console.log(body[]);
-                  console.log(body[0].id + " : " + currRepo.html_url);
-                }
-              });*/
-
-              console.log(body.id,body.html_url);
+                  //if there was no error, there is only one contributor, and there were at least 10 contributions
+                  if (!err && body.length == 1 && body[0].contributions >= 10) {
+                    console.log(repo.id + " : " + repo.html_url);
+                  }
+                });
+              })(body);
             }
           });
         }
