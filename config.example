@@ -1,5 +1,6 @@
 {
     "since": 0,
     "clientID": YOUR_CLIENT_ID,
-    "clientSecret": YOUR_CLIENT_SERVER
+    "clientSecret": YOUR_CLIENT_SERVER,
+    "orchestrateKey": YOUR_ORCHESTRATE_KEY
 }
