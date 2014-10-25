@@ -1,3 +1,5 @@
 config.json
 data.txt
 node_modules/
+orchestrate.txt
+remote.sh
